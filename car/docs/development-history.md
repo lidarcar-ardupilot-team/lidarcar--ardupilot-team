@@ -8,6 +8,7 @@
 - [如何使用这份时间线](#how-to-use)
 - [阶段总览](#stages)
 - [路线为何这样演变](#decisions)
+- [开发复盘：从赶提交到可验证闭环](lessons-learned.md)
 - [历史分支与当前仓库的关系](#boundaries)
 
 </details>

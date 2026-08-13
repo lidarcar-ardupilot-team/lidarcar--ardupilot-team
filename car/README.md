@@ -12,6 +12,7 @@
 | 接入无人机/地面站 | [空地通信约定](../docs/competition/communication-contract.md) | 帧格式、字节序、坐标系、波特率、超时和三端版本。 |
 | 复盘已归档的 A/B 联调 | [视频证据索引](evidence/20260710-airlink-ab-return/README.md) | 视频仅覆盖当时的硬件、固件、场地与路线。 |
 | 了解方案怎样形成 | [开发脉络与版本锚点](docs/development-history.md) | 历史 checkpoint 用于追溯，不等于当前工程基线。 |
+| 阅读真实试错与重建过程 | [开发复盘：从赶提交到可验证闭环](docs/lessons-learned.md) | 记录应急交付、定位重建、禁区实测与返航要求如何形成。 |
 
 </details>
 
