@@ -1,0 +1,54 @@
+# MSPM0G3507 通用引脚分配
+
+**状态：`team-confirmed`。** 本表由团队提供，说明已在多轮调试中确认。它适用于使用完整 `PAxx/PBxx` 引脚集合的 MSPM0G3507 板卡；建立 SysConfig 工程前必须核对实际封装和 PCB 修订号。不同封装并不暴露相同的引脚集合。
+
+## UART 可选对
+
+| UART | TX 候选 | RX 候选 |
+| --- | --- | --- |
+| UART0 | PA0、PA10、PA28、PB0 | PA1、PA11、PA31、PB1 |
+| UART1 | PA8、PA17、PB4、PB6 | PA9、PA18、PB5、PB7 |
+| UART2 | PA23、PB15、PB17 | PA24、PB16、PB18 |
+| UART3 | PA14、PA26、PB2、PB12 | PA13、PA25、PB3、PB13 |
+
+候选对来自同一外设的 PinMux 选择，**不是可同时启用的重复串口**。每个 UART 在一个构建配置中只选择一对 TX/RX。
+
+## 团队当前角色与备用对
+
+| 功能 | 活动对/引脚 | 备用或互斥选择 | 备注 |
+| --- | --- | --- | --- |
+| UART0 | PA0 / PA1 | PB0 / PB1 | 团队标注为循迹相关链路；PB0/PB1 另有按键/无线 OUT 角色，不能同配。 |
+| UART1 | PA8 / PA9 | PB4 / PB5；PA17 / PA18 | 陀螺仪；备用引脚与 LED 或 ADC 规划互斥。 |
+| UART2 | PA23 / PA24 | PB15 / PB16 | 主串口调试；PB15/PB16 是当前雷达对，按所选构建二选一。 |
+| UART3 | PA14 / PA13 | PB2 / PB3 | OpenMV / 当前 AS32 无线；不要改用会冲突的 PA26 或 PB12/PB13 候选。 |
+| 显示屏 I2C | PA15 / PA16 | 无 | 按当前板卡连接使用。 |
+
+## 定时器、驱动与通用 IO
+
+| 功能 | 主分配 | 备用/限制 |
+| --- | --- | --- |
+| TIMA1 | PB17 / PB18 | 舵机云台（与 OpenMV 配合）；替代原 PB6/PB7 方案。 |
+| TIMA0 | PB8 / PB9 | PA25 / PA24 备用；PA3/PA4 不可占用，保留给循迹相关使用。 |
+| TIMG0 | PA12 | 蜂鸣器。 |
+| TIMG6 | PA29 / PA30 | 左编码器；PB10/PB11 备用。 |
+| TIMG7 | PA26 / PA27 | 右编码器；PA28/PA31 备用。 |
+| TIMG8 | PB21 / PB22 | 电机 PWM；PA7/PA22 备用。 |
+| TIMG12 | PB13 | 中断用途，不作普通引脚使用。 |
+| SysTick | 无专用输出脚 | LED 软件 PWM。 |
+| TB6612 PWM | PB21 / PB22 | 分别为电机 A/B，来自 TIMG8。 |
+| TB6612 IN1/IN2/IN3/IN4 | PA2 / PB26 / PB27 / PB19 | PA5/PA6 已替换为 PB26/PB27。 |
+| TB6612 STBY | PB14 | 复位、故障和切换时保持安全禁用。 |
+| 按键 1/2/3/4 | PB6 / PB7 / PB25 / PB0 | 均与 UART 备用复用候选分开管理。 |
+| LED1/LED2 | PB4 / PB5 | LED3（PB20）已弃用。 |
+| 超声波 Echo/Trig | PB12 / PB23 | PB12 不可同时作 UART3 TX 候选。 |
+| 循迹/雷达/无线 OUT 约束 | PB15/PB16 为雷达；PB0 为按键；PB1 为无线 OUT | 根据 ADC 方案与实际输入统一复核。 |
+| ADC 规划 | PA17、PA18、PB20 | PA25、PB24 为备用；均不得与选中的 UART/定时器复用。 |
+
+## 已知互斥点
+
+- PB0/PB1 与 UART0 备用对冲突；PB4/PB5 与 UART1 备用对冲突；PB6/PB7 与 UART1 备用对冲突。
+- PB15/PB16 在 UART2 雷达对与其他用途之间二选一；PB17/PB18 不与 UART2 备用对同时使用。
+- PA24/PA25 同时是 UART/定时器/ADC 候选；PA26、PA28、PA31 同时参与 UART 或右编码器备用选择。
+- PB12 与 UART3 TX 候选、超声波 Echo 互斥；PB13 作为 TIMG12 中断时不使用 UART3 的 PB13 候选。
+
+最终有效分配以版本化 `.syscfg`、生成的 `ti_msp_dl_config.*` 和实物测量为准；详见 [`mspm0g3507-sysconfig-validation.md`](mspm0g3507-sysconfig-validation.md)。
