@@ -1,30 +1,31 @@
-# 资料与证据索引
+# 项目资料与验证状态
 
-> 此页帮助阅读者判断“已有材料是什么”与“它能证明什么”。它不把历史快照、图片或单次视频包装成当前系统的整体验收。
+> 本页说明仓库中每类材料能支撑到什么范围。它不把阶段文件、图片或单次视频包装成完整比赛验收。
 
 ## 状态标签
 
 | 标签 | 含义 | 最低支撑 |
 | --- | --- | --- |
-| `planned` | 已提出但未验证 | 需求或待办；不能宣称已可用。 |
-| `team-confirmed` | 团队多轮核对过的约定/分配 | 记录来源；涉及硬件时仍要与实际 PCB 和量测核对。 |
-| `bench-verified` | 台架、单模块或最小链路通过 | 固件/配置版本、接线、操作、观察/日志。 |
-| `field-verified` | 在记录的实际场地/任务条件下验证 | 同轮版本、环境、完整证据与通过判据。 |
-| `reference` | 历史快照、旧工程或外部对照 | 来源、范围和差异；不能直接继承为当前结果。 |
+| `planned` | 已提出但尚未验证 | 需求或待办；不能宣称已可用。 |
+| `team-confirmed` | 团队多轮核对过的约定/分配 | 记录清楚；涉及硬件仍须与 PCB 和量测核对。 |
+| `bench-verified` | 台架、单模块或最小链路通过 | 固件/配置版本、接线、操作、观察或日志。 |
+| `field-verified` | 在记录的赛场/任务条件下验证 | 同轮版本、环境、完整证据与通过判据。 |
+| `stage-record` | 阶段性文件、预览或测试留档 | 适用版本与边界；不能自动继承到新硬件或新场地。 |
 
-## 已归档材料
+## 当前项目材料
 
-| 材料 | 位置 | 当前标签 | 能支持的范围 | 仍不能支持 |
+| 材料 | 位置 | 标签 | 可用于什么 | 仍不能说明什么 |
 | --- | --- | --- | --- | --- |
-| MSPM0 `empty.c` 控制快照 | [car/firmware/mspm0/](../car/firmware/mspm0/) | `reference` | 历史 A/B 路线、返航、停止相关逻辑的来源可追溯 | 当前完整工程可构建、新板 PinMux 或新赛道结论。 |
-| MSPM0G3507 引脚分配 | [car/docs/mspm0g3507-pin-assignment.md](../car/docs/mspm0g3507-pin-assignment.md) | `team-confirmed` | 团队当前角色与互斥关系的核对入口 | PCB 连通、所选封装可用性和外设实物通信。 |
-| SysConfig 验证流程 | [car/docs/mspm0g3507-sysconfig-validation.md](../car/docs/mspm0g3507-sysconfig-validation.md) | 方法文档 | 生成配置与台架核对步骤 | 任何未执行配置的结果。 |
-| 雷达车原理图 PDF | [car/hardware/](../car/hardware/) | 归档设计资料 | 导出时的连线/接口设计信息 | 原始 EDA、Gerber、BOM、实物焊接和板测。 |
-| A/B 历史联调视频索引 | [car/evidence/20260710-airlink-ab-return/](../car/evidence/20260710-airlink-ab-return/) | `reference` | 原始视频名称、大小、哈希和预览可追溯 | 当前固件、PCB、场地或重复性。 |
-| STM32F103ZET6 车端基线 | [reference/stm32f103zet6-vehicle-base/](../reference/stm32f103zet6-vehicle-base/) | `reference` | 被迁入源码的来源、构建和比较入口 | MSPM0 或本项目任一当前模块的引脚/协议/验收。 |
-| 无人机与视觉正式材料 | [aircraft/](../aircraft/) / [vision/](../vision/) | `planned` | 职责入口 | 飞行、识别、投递或跨端接口已经完成。 |
+| MSPM0G3507 阶段控制文件 | [car/firmware/mspm0/](../car/firmware/mspm0/) | `stage-record` | 回看阶段性的路线、返航、停止逻辑。 | 当前完整工程可构建、新板 PinMux 或新赛道结论。 |
+| MSPM0G3507 引脚分配 | [car/docs/mspm0g3507-pin-assignment.md](../car/docs/mspm0g3507-pin-assignment.md) | `team-confirmed` | 角色与互斥关系的核对入口。 | PCB 连通、所选封装可用性和外设实物通信。 |
+| SysConfig 验证流程 | [car/docs/mspm0g3507-sysconfig-validation.md](../car/docs/mspm0g3507-sysconfig-validation.md) | 方法文档 | 生成配置与台架核对步骤。 | 任何未实际执行配置的结果。 |
+| 雷达小车原理图 | [car/hardware/](../car/hardware/) | 设计资料 | 导出时的连线/接口设计信息。 | 原始 EDA、Gerber、BOM、实物焊接和板测。 |
+| A/B 空地联调视频预览 | [car/evidence/20260710-airlink-ab-return/](../car/evidence/20260710-airlink-ab-return/) | `stage-record` | 查看已归档的阶段性片段、名称和校验信息。 | 当前固件、PCB、场地或重复性。 |
+| 低空无人机智慧救援赛题与评分 | [docs/competition/](competition/) | 官方题目资料 | 任务闭环、场地尺寸、100 分评分矩阵和提交约束。 | 任一队伍已经达到某个得分项。 |
+| 空地目标坐标应用层协议 | [通信约定](competition/communication-contract.md) | `team-confirmed` | 三端联调的帧、字节序、链路和坐标转换口径。 | 新固件/新模块已经无线联调成功。 |
+| 外部视频资料 | [百度网盘（提取码：`rtc5`）](https://pan.baidu.com/s/1NWzUF5uAcV-nFKnTc4LYAA?pwd=rtc5) | `stage-record` | 项目视频材料的访问入口。 | 未标注版本、条件和判据的现役验收结论。 |
 
-## 新证据最小登记
+## 新记录最小字段
 
 新增一份照片、视频、日志、PCB 或测试结论时，至少写明：
 
@@ -38,4 +39,4 @@
 不覆盖的条件/限制：
 ```
 
-原始大视频、模型权重和可能含敏感信息的日志不直接放入普通 Git 历史；用 GitHub Release、Git LFS 或经授权的存储发布，并在索引中留文件名、哈希与稳定链接。
+原始大视频、模型权重和可能含敏感信息的日志不直接放入普通 Git 历史；使用经团队确认的存储入口发布，并在本页或模块索引中留文件名、哈希与稳定链接。

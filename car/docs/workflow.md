@@ -1,8 +1,8 @@
-# 雷达小车压缩工作流
+# 雷达小车开发工作流
 
-**状态：`reference`。** 本文从 haimichenha 的 `lidarMSP/skills/references/workflow.md` 提炼为仓库协作入口，只保留仍可执行的层级、证据和回退规则。原始调试过程不重复写成流水账；需要追溯历史版本时，查看来源仓库的分支与提交记录。
+**状态：项目执行规范。** 本文定义本仓库小车端从硬件核对到现场联调的层级、证据和回退规则。它不是调试流水账；每轮只记录对当前工程有用的结论和材料。
 
-当前仓库只有历史 `empty.c` 快照，不含完整 MSPM0 工程和版本化 `*.syscfg`。因此，下面规则用于恢复或新建工程时的执行顺序，不能把历史参数直接视为当前实测结论。
+当前仓库包含阶段性的 `empty.c` 控制文件，但不含完整 MSPM0 工程和版本化 `*.syscfg`。因此，下面规则用于恢复或新建工程时的执行顺序，不能把阶段参数直接视为当前实测结论。
 
 ## 每轮任务先写清
 
@@ -60,11 +60,11 @@ stop_src, protect, fault, plan_fail,
 forbid_id, forbid_dist, rx, ok, err
 ```
 
-达到可复用结论后，立即保存日志/视频索引、更新相应 Markdown，并创建 Git checkpoint。历史 A/B 联调的可提交缩略证据与原始文件哈希见 [`../evidence/20260710-airlink-ab-return/README.md`](../evidence/20260710-airlink-ab-return/README.md)。
+达到可复用结论后，立即保存日志/视频索引、更新相应 Markdown，并创建 Git checkpoint。A/B 空地联调的阶段视频预览与文件哈希见 [`../evidence/20260710-airlink-ab-return/README.md`](../evidence/20260710-airlink-ab-return/README.md)。
 
-## 追溯入口
+## 本项目入口
 
-- 压缩工作流来源：[`haimichenha/all-search-stack`](https://github.com/haimichenha/all-search-stack) 的雷达小车历史分支（可能需要成员权限）；本仓库只保留当前协作需要的可执行规则。
-- 稳定引脚与协议定义：[`mspm0g3507-pin-assignment.md`](mspm0g3507-pin-assignment.md)。
+- 引脚与 PinMux：[`mspm0g3507-pin-assignment.md`](mspm0g3507-pin-assignment.md)。
+- 空地无线联调：[`../../docs/competition/communication-contract.md`](../../docs/competition/communication-contract.md)。
 - 原理图与板级核对顺序：[`../hardware/README.md`](../hardware/README.md)。
-- 历史版本与时间线：[`../../docs/history/team-project-tracks.md`](../../docs/history/team-project-tracks.md)。
+- 评分项与赛前检查：[`../../docs/competition/scoring-matrix.md`](../../docs/competition/scoring-matrix.md)。

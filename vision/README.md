@@ -11,8 +11,8 @@
 | 舵机投递 | `planned` | 安全位置、行程、触发条件、与飞控状态的约束和台架/实物证据。 |
 | 视觉与投递验证 | `planned` | 测试条件、数据/视频/日志、通过判据、失败行为与限制。 |
 
-## 可比较材料与边界
+## 资料边界
 
-- [参考 YOLOv5 目录](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/yolov5/) 和 [参考舵机测试入口](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/Hardware/app_servo_test.c) 仅供改造比较；它们不是本目录的正式实现。
+- 本仓库未迁入视觉模型或舵机测试工程。后续引入外部框架时，需在本目录记录来源、版本、许可证、目标平台接口差异和验证结果。
 - 模型权重、推理产物和大视频按 [资料与证据索引](../docs/evidence-and-status.md) 的发布规则管理，不直接进入普通 Git 历史。
 - 与无人机、小车交接前，先完成 [跨模块接口记录](../docs/team-collaboration.md#interface-record)；视觉结果不能单独替代飞控安全状态或小车本地停车判断。
