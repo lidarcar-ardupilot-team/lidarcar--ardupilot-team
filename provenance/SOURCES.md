@@ -31,7 +31,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 本地来源 | `D:\Vs Code\MSPM0\lidarMSP\SCH_Schematic1_1_2026-08-13.pdf` |
+| 来源位置 | haimichenha 的受控本地归档；公开仓库不记录个人绝对路径 |
 | 迁入文件 | [`car/hardware/pcb/SCH_Schematic1_1_2026-08-13.pdf`](../car/hardware/pcb/SCH_Schematic1_1_2026-08-13.pdf) |
 | 文件大小 | 324,096 bytes |
 | SHA-256 | `70d55724bbee6695e336eb8b8b0eac7ca4393a7438a67219c6833823826c8f98` |
@@ -39,11 +39,11 @@
 
 ### 联调视频证据索引
 
-四段原始 MP4 保留在本地 `D:\Vs Code\MSPM0\lidarMSP\ppt creating\images\vedio联调\`，合计 1,165,821,367 bytes，未写入普通 Git 历史。可提交的联系表缩略图、原始视频哈希和用途说明见 [`car/evidence/20260710-airlink-ab-return/README.md`](../car/evidence/20260710-airlink-ab-return/README.md)。
+四段原始 MP4 保留在 haimichenha 的受控本地归档，合计 1,165,821,367 bytes，未写入普通 Git 历史。可提交的联系表缩略图、原始视频哈希和用途说明见 [`car/evidence/20260710-airlink-ab-return/README.md`](../car/evidence/20260710-airlink-ab-return/README.md)。
 
 ### 压缩工作流
 
-`car/docs/workflow.md` 的来源是 `D:\Vs Code\MSPM0\lidarMSP\skills\references\workflow.md`。迁入时只保留分层执行、日志证据、停止条件和 checkpoint 规则；原始调试过程以 `haimichenha/all-search-stack` 的历史分支与提交为追溯来源。
+`car/docs/workflow.md` 的来源是 haimichenha 维护的 `all-search-stack` 雷达小车历史工作流。迁入时只保留分层执行、日志证据、停止条件和 checkpoint 规则；原始调试过程以 [`haimichenha/all-search-stack`](https://github.com/haimichenha/all-search-stack) 的获授权历史分支与提交为追溯来源。
 
 ## 复核方法
 

@@ -64,7 +64,7 @@ forbid_id, forbid_dist, rx, ok, err
 
 ## 追溯入口
 
-- 压缩工作流来源：`D:\Vs Code\MSPM0\lidarMSP\skills\references\workflow.md`。
+- 压缩工作流来源：[`haimichenha/all-search-stack`](https://github.com/haimichenha/all-search-stack) 的雷达小车历史分支（可能需要成员权限）；本仓库只保留当前协作需要的可执行规则。
 - 稳定引脚与协议定义：[`mspm0g3507-pin-assignment.md`](mspm0g3507-pin-assignment.md)。
 - 原理图与板级核对顺序：[`../hardware/README.md`](../hardware/README.md)。
 - 历史版本与时间线：[`../../docs/history/team-project-tracks.md`](../../docs/history/team-project-tracks.md)。

@@ -1,8 +1,29 @@
-# 团队资料
+# 团队资料入口
 
-本目录存放不属于单一负责人、但需要全队共同遵守的资料与历史索引：
+本目录只放不属于单一负责人的协作规则、资料索引与历史边界。具体实现、参数和测试记录仍放进 [`../car/`](../car/)、[`../aircraft/`](../aircraft/) 或 [`../vision/`](../vision/)。
 
-- [`architecture/repository-boundaries.md`](architecture/repository-boundaries.md)：目录边界、来源和复用规则。
-- [`history/team-project-tracks.md`](history/team-project-tracks.md)：雷达小车与 STM32 复用基线的可追溯时间线。
+## 按目的阅读
 
-小车、无人机、视觉与投递的实现说明分别进入 [`../car/`](../car/)、[`../aircraft/`](../aircraft/) 和 [`../vision/`](../vision/)。
+| 目的 | 文档 | 用途 |
+| --- | --- | --- |
+| 先了解谁负责什么、怎么交接 | [团队职责与接口](team-collaboration.md) | 三人边界、跨模块交接模板和变更顺序。 |
+| 判断已有材料能证明什么 | [资料与证据索引](evidence-and-status.md) | 证据等级、现有材料与禁止泛化的边界。 |
+| 判断文件应放在哪 | [仓库边界与协作规则](architecture/repository-boundaries.md) | 职责目录、共享目录与参考基线的分界。 |
+| 追溯雷达车或 STM32 基线的来源 | [项目轨道时间线](history/team-project-tracks.md) | 日期、快照、验证等级，以及来源仓库的分支入口。 |
+| 阅读项目经历而非技术说明 | [首次获奖项目纪实](history/first-award-notes.md) | 个人复盘与团队经历；不作为性能或验收证据。 |
+| 检查本次要改的 PCB、上电或装车内容 | [共用硬件入口](../shared/) | PCB 登记和上电检查单。 |
+
+## 阅读顺序
+
+1. 新加入或跨模块开发：先读 [团队职责与接口](team-collaboration.md)；
+2. 准备引用某张照片、日志、视频或旧代码：再读 [资料与证据索引](evidence-and-status.md)；
+3. 落地到具体模块时，进入负责人目录，记录构建、硬件版本、测试条件和结论；
+4. 要复用旧工程时，最后检查 [参考基线的复用门槛](architecture/repository-boundaries.md#复用与改造门槛)。
+
+开发过程较长时，以来源仓库的分支、提交和原始工作流为完整追溯线；本仓库只保留能帮助当前协作的结论、快照与证据入口，避免把所有调试流水堆入一个 README。
+
+## 维护边界
+
+- 新增的公共规则、接口合同、共同硬件事实和全队时间线放在本目录；
+- 单人负责的代码、调参、硬件接口和证据不要复制到这里；在本目录放一个链接即可；
+- 任何 `field-verified` 结论都要能回到负责人的固件版本、场地条件和原始证据。

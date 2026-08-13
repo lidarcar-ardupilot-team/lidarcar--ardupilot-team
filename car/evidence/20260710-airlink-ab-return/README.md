@@ -15,7 +15,7 @@
 
 ## 原始视频清单
 
-原始文件保留位置：`D:\Vs Code\MSPM0\lidarMSP\ppt creating\images\vedio联调\`。其名称、大小和 SHA-256 如下，可在需要发布附件、Git LFS 或外部存储时核对。
+原始文件保留在 haimichenha 的受控本地归档。其名称、大小和 SHA-256 如下，可在需要发布附件、Git LFS 或外部存储时核对。
 
 | 原始文件名 | 大小（bytes） | SHA-256 |
 | --- | ---: | --- |

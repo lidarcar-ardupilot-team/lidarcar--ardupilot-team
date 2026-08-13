@@ -1,18 +1,24 @@
 # haimichenha：雷达小车
 
-本目录由 haimichenha 维护，保存雷达小车的 MSPM0 控制、引脚分配、雷达/编码器/姿态输入、路径规划、返航与电机驱动相关说明和证据。
+> 本目录是雷达小车的职责入口，维护 MSPM0 控制、雷达/编码器/姿态输入、路径规划、返航、底盘驱动及其证据。它不维护无人机飞控，也不维护视觉模型或投递逻辑。
 
-## 当前内容
+## 先看状态
 
-- 历史控制器快照：[`firmware/mspm0/phase9-airlink-ab-return-stop-20260710/empty.c`](firmware/mspm0/phase9-airlink-ab-return-stop-20260710/empty.c)。这是来源可追溯的单文件归档，尚不是完整可构建工程。
-- 控制说明：[`docs/README.md`](docs/README.md)
-- MSPM0G3507 引脚表：[`docs/mspm0g3507-pin-assignment.md`](docs/mspm0g3507-pin-assignment.md)
-- SysConfig 验证流程：[`docs/mspm0g3507-sysconfig-validation.md`](docs/mspm0g3507-sysconfig-validation.md)
-- 原理图导出与硬件核对边界：[`hardware/README.md`](hardware/README.md)
-- A/B 联调视频的可提交缩略证据与原始视频清单：[`evidence/20260710-airlink-ab-return/README.md`](evidence/20260710-airlink-ab-return/README.md)
+| 项目 | 当前状态 | 阅读边界 |
+| --- | --- | --- |
+| MSPM0 控制器 | `reference` | 已迁入的 [`empty.c` 历史快照](firmware/mspm0/phase9-airlink-ab-return-stop-20260710/empty.c) 可追溯，但不是完整可构建工程。 |
+| 引脚与 PinMux | `team-confirmed` → 待台架复核 | 先读 [引脚分配](docs/mspm0g3507-pin-assignment.md) 与 [SysConfig 验证](docs/mspm0g3507-sysconfig-validation.md)。 |
+| 硬件资料 | 部分归档 | 有 [原理图 PDF 与核对顺序](hardware/README.md)；EDA 源、Gerber、BOM 和板测待补。 |
+| 历史 A/B 联调 | `reference` | 有 [视频预览/哈希索引](evidence/20260710-airlink-ab-return/README.md)，不自动覆盖新板、新固件或新场地。 |
 
-## 职责边界
+## 按任务进入
 
-haimichenha 负责小车本体的定位、规划、底盘驱动、雷达链路和相关集成记录；不在此目录维护无人机飞行控制，也不维护视觉识别模型与舵机投递逻辑。跨职责接口应由双方在各自目录同步记录。
+- **恢复或新建 MSPM0 工程：** [控制资料入口](docs/README.md) → [压缩工作流](docs/workflow.md)。先补 `.syscfg`、生成配置、构建方式和硬件修订号。
+- **核对 PCB、引脚和外设：** [硬件资料](hardware/README.md) → [引脚分配](docs/mspm0g3507-pin-assignment.md)。物理连通与 SysConfig 冲突未消除前，不用旧代码反推接线。
+- **复盘历史 A/B 联调：** [视频证据索引](evidence/20260710-airlink-ab-return/README.md)。它只描述归档条件下的材料。
+- **对照 STM32 旧基线：** [参考工程](../reference/stm32f103zet6-vehicle-base/)。任何取用都需记录来源、接口差异和本项目验证结果。
+- **与无人机/视觉联调：** 先建立 [跨模块接口记录](../docs/team-collaboration.md#interface-record)，再进入串联测试。
 
-本目录下的 Markdown 可直接作为雷达小车说明文件修改。新增完整工程时，应保留版本化 `*.syscfg`、生成配置、构建方式、PCB 修订号和台架/实车证据。
+## 提交要求
+
+每次控制、引脚、路线或停车行为变化，至少记录：输入来源、输出执行器、参数/状态机差异、PCB/固件版本、最小验证命令、原始证据与回退提交。状态定义和材料边界见 [资料与证据索引](../docs/evidence-and-status.md)。

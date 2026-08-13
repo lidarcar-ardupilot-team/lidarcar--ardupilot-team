@@ -1,10 +1,18 @@
 # 韦少：视觉识别与舵机投递
 
-本目录预留给韦少维护视觉识别、模型/数据发布、目标结果接口、舵机投递逻辑和相应验证记录。
+> 本目录由韦少维护视觉识别、结果接口、舵机投递逻辑及其验证。当前尚未迁入正式模型、配置、相机链路或投递记录；因此本页只定义资料落点，不宣称识别、投递或联动已完成。
 
-可参考的已有材料位于：
+## 当前状态与下一步
 
-- 视觉源码：[`../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/yolov5/`](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/yolov5/)
-- 舵机测试入口：[`../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/Hardware/app_servo_test.c`](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/Hardware/app_servo_test.c)
+| 内容 | 状态 | 负责人补入时至少包含 |
+| --- | --- | --- |
+| 视觉推理与模型发布 | `planned` | 代码/配置版本、模型获取方式、运行命令、输入设备和许可证。 |
+| 识别结果接口 | `planned` | 类别/坐标/置信度、坐标系、有效期、发送频率和异常值处理。 |
+| 舵机投递 | `planned` | 安全位置、行程、触发条件、与飞控状态的约束和台架/实物证据。 |
+| 视觉与投递验证 | `planned` | 测试条件、数据/视频/日志、通过判据、失败行为与限制。 |
 
-这些材料仅供改造参考，模型权重和推理工件未随迁移提交。正式实现应在本目录新增 `firmware/`、`docs/` 与 `evidence/`，并明确相机/识别结果、投递触发条件、舵机行程、安全位置和实测证据。无人机飞行控制与雷达小车规划不在本目录维护。
+## 可比较材料与边界
+
+- [参考 YOLOv5 目录](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/yolov5/) 和 [参考舵机测试入口](../reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/Hardware/app_servo_test.c) 仅供改造比较；它们不是本目录的正式实现。
+- 模型权重、推理产物和大视频按 [资料与证据索引](../docs/evidence-and-status.md) 的发布规则管理，不直接进入普通 Git 历史。
+- 与无人机、小车交接前，先完成 [跨模块接口记录](../docs/team-collaboration.md#interface-record)；视觉结果不能单独替代飞控安全状态或小车本地停车判断。
