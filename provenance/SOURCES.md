@@ -1,6 +1,6 @@
 # 迁移来源与完整性边界
 
-## 电赛 STM32 源码
+## STM32 车端复用基线
 
 | 字段 | 值 |
 | --- | --- |
@@ -8,11 +8,11 @@
 | 来源目录 | `ZET6 HAl/lidar_car` |
 | 提交 | `b63f401799afd1d8a71458cbef7f02befb66343f` |
 | 提交说明 | `release(car): archive flashed competition firmware` |
-| 迁入目录 | `projects/electrical-contest/firmware/stm32f103zet6/` |
+| 迁入目录 | `reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6/` |
 | 保留范围 | 已提交的构建配置、车端源码、脚本和随项目分发的视觉源码 |
 | 排除范围 | 本地未提交内容、构建输出（含 ELF）、日志、AS 状态、CAD/媒体资产、模型权重/ONNX/TensorRT engine、YOLO 运行结果和运行凭据 |
 
-## 机器人赛 MSPM0 控制快照
+## 雷达小车 MSPM0 控制快照
 
 | 字段 | 值 |
 | --- | --- |
@@ -20,19 +20,19 @@
 | 归档分支 | `archive/phase9-airlink-ab-return-stop-20260710` |
 | 归档提交 | `183e6ec947ee1a9d4bfcbf0137250e4adfd545df` |
 | 文件 Blob | `1f2a1c8b61f8b4abd530b4c001ffe501c906947a` |
-| 迁入目录 | `projects/robot-ai-contest/firmware/mspm0/phase9-airlink-ab-return-stop-20260710/` |
+| 迁入目录 | `car/firmware/mspm0/phase9-airlink-ab-return-stop-20260710/` |
 | 完整性界限 | 仅包含 `empty.c`；不含匹配的完整工程与构建产物 |
 
 ## 团队提供的硬件资料
 
-`projects/robot-ai-contest/docs/control/mspm0g3507-pin-assignment.md` 根据团队于本次迁移中提供并声明多轮确认的 MSPM0G3507 引脚表整理。该表的 PinMux 可行性由 TI 官方数据手册和 SysConfig 流程复核；具体 PCB 连通性仍以团队的实物证据为准。
+`car/docs/mspm0g3507-pin-assignment.md` 根据团队于本次迁移中提供并声明多轮确认的 MSPM0G3507 引脚表整理。该表的 PinMux 可行性由 TI 官方数据手册和 SysConfig 流程复核；具体 PCB 连通性仍以团队的实物证据为准。
 
 ## 复核方法
 
-对电赛源码，在来源仓库执行：
+对 STM32 复用基线，在来源仓库执行：
 
 ```powershell
-git diff --no-index -- "ZET6 HAl/lidar_car" "<target>/projects/electrical-contest/firmware/stm32f103zet6"
+git diff --no-index -- "ZET6 HAl/lidar_car" "<target>/reference/stm32f103zet6-vehicle-base/firmware/stm32f103zet6"
 ```
 
 差异应仅来自本文件明确排除的路径。对 MSPM0 文件，以来源 Blob 和目标文件哈希复核。任何补齐的 PCB、树莓派或完整 MSPM0 工程都应增加新的来源条目，而不是覆盖本记录。
