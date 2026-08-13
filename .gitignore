@@ -10,6 +10,17 @@ Listings/
 *.map
 *.out
 *.o
+*.axf
+*.crf
+*.d
+*.dep
+*.lst
+*.lnp
+*.uvguix.*
+*.uvoptx
+*.lock
+JLinkLog.txt
+JLinkSettings.ini
 
 # Runtime evidence is stored outside the source tree unless explicitly curated.
 logs/

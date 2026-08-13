@@ -1,2 +1,7 @@
 # Keep exported drawings byte-for-byte; PDF object streams are not text diffs.
 *.pdf binary
+
+# Imported ANO_LX source is a byte-preserved stage snapshot.  It contains
+# pre-existing trailing whitespace in vendor and project files; do not rewrite
+# it merely to satisfy a repository-wide whitespace style check.
+aircraft/firmware/ano_lx_stm32f407/** -whitespace

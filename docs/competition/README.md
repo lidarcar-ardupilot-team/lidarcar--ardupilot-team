@@ -72,7 +72,7 @@
 | [官方通知及附件（PDF）](assets/competition-notice-2026-guangxi.pdf) | 文件全名为《第 28 届中国机器人及人工智能大赛广西赛区暨第 5 届广西机器人及人工智能大赛通知》；本页题目、场地、评分和尺寸均以其中“低空无人机智慧救援”专项赛及附件为依据。SHA-256：`8909C0C79DAD9C35B08A34F18A092E8AABDEC2261C8BCFA6C52CD2CB5345B09B`。 |
 | [官方评分表图](assets/official-score-sheet.png) | 便于快速对照版式；文本化、可检索的完整条目见 [评分矩阵](scoring-matrix.md)，原始依据仍是 PDF。 |
 | [小车与无人机归档视图](assets/vehicle-and-aircraft-view.jpg) | 仅说明当时硬件的外观与组合状态；不据此推导尺寸合规、通信成功或任务完成。 |
-| [项目提供的外部视频资料](https://pan.baidu.com/s/1NWzUF5uAcV-nFKnTc4LYAA?pwd=rtc5)（提取码：`rtc5`） | 项目视频入口。逐段补入日期、版本、场地与通过判据前，它保持 `stage-record` 状态。 |
+| [项目提供的外部视频资料](https://pan.baidu.com/s/1ynyjWyGLR6IYjEXc92roYQ?pwd=ewr4)（提取码：`ewr4`） | 项目视频入口。逐段补入日期、版本、场地与通过判据前，它保持 `stage-record` 状态。 |
 
 <p align="center">
   <img src="assets/vehicle-and-aircraft-view.jpg" alt="归档的小车与无人机俯视图" width="720">
