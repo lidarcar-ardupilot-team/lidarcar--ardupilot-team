@@ -31,3 +31,4 @@
 - [`mspm0g3507-pin-assignment.md`](mspm0g3507-pin-assignment.md)：团队确认的 UART、I2C、定时器、电机、按键、超声波和 ADC 分配。
 - [`mspm0g3507-sysconfig-validation.md`](mspm0g3507-sysconfig-validation.md)：在 TI SysConfig 中生成并验证有效 PinMux 的流程。
 - [`workflow.md`](workflow.md)：压缩后的分层执行、证据和 checkpoint 规则。
+- [`development-history.md`](development-history.md)：从定位重建、禁区实测、返航闭环到 A/B 无线联调的开发脉络与历史版本锚点。
