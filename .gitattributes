@@ -1,0 +1,2 @@
+# Keep exported drawings byte-for-byte; PDF object streams are not text diffs.
+*.pdf binary

@@ -27,6 +27,24 @@
 
 `car/docs/mspm0g3507-pin-assignment.md` 根据团队于本次迁移中提供并声明多轮确认的 MSPM0G3507 引脚表整理。该表的 PinMux 可行性由 TI 官方数据手册和 SysConfig 流程复核；具体 PCB 连通性仍以团队的实物证据为准。
 
+### 雷达小车原理图导出
+
+| 字段 | 值 |
+| --- | --- |
+| 本地来源 | `D:\Vs Code\MSPM0\lidarMSP\SCH_Schematic1_1_2026-08-13.pdf` |
+| 迁入文件 | [`car/hardware/pcb/SCH_Schematic1_1_2026-08-13.pdf`](../car/hardware/pcb/SCH_Schematic1_1_2026-08-13.pdf) |
+| 文件大小 | 324,096 bytes |
+| SHA-256 | `70d55724bbee6695e336eb8b8b0eac7ca4393a7438a67219c6833823826c8f98` |
+| 完整性界限 | 单页 PDF 导出；不包含原始 EDA 工程、Gerber 或 BOM。 |
+
+### 联调视频证据索引
+
+四段原始 MP4 保留在本地 `D:\Vs Code\MSPM0\lidarMSP\ppt creating\images\vedio联调\`，合计 1,165,821,367 bytes，未写入普通 Git 历史。可提交的联系表缩略图、原始视频哈希和用途说明见 [`car/evidence/20260710-airlink-ab-return/README.md`](../car/evidence/20260710-airlink-ab-return/README.md)。
+
+### 压缩工作流
+
+`car/docs/workflow.md` 的来源是 `D:\Vs Code\MSPM0\lidarMSP\skills\references\workflow.md`。迁入时只保留分层执行、日志证据、停止条件和 checkpoint 规则；原始调试过程以 `haimichenha/all-search-stack` 的历史分支与提交为追溯来源。
+
 ## 复核方法
 
 对 STM32 复用基线，在来源仓库执行：
