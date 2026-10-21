@@ -1,6 +1,6 @@
 # 协作与变更规则
 
-> 新成员先读仓库根目录的“快速导航”，跨模块工作再读 [`docs/team-collaboration.md`](docs/team-collaboration.md)。本文只规定每次修改的最小提交边界。
+> 新成员先读仓库根目录的“快速导航”，跨模块工作再读 [`docs/团队分工与接口约定.md`](docs/团队分工与接口约定.md)。本文只规定每次修改的最小提交边界。
 
 ## 变更落点
 
@@ -13,7 +13,14 @@
 
 在负责人目录中记录：输入来源、输出执行器、参数或状态机变化、验证命令/日志、验证等级与回退提交。一次实车成功只能说明所记录的条件下通过，不能覆盖其他职责或其他硬件配置。
 
-状态标签使用 [`docs/evidence-and-status.md`](docs/evidence-and-status.md) 的 `planned`、`team-confirmed`、`bench-verified`、`field-verified` 或 `stage-record`；不要把“构建成功”“看起来能动”写成 `field-verified`。
+状态标签使用 [`docs/项目资料与验证状态.md`](docs/项目资料与验证状态.md) 的 `planned`、`team-confirmed`、`bench-verified`、`field-verified` 或 `stage-record`；不要把“构建成功”“看起来能动”写成 `field-verified`。
+
+## 文档命名与导航
+
+- 面向阅读的说明文档使用简洁中文文件名；`README.md`、`CONTRIBUTING.md` 等约定入口名称保留。
+- 型号、工具和协议名按需保留，如 MSPM0G3507、SysConfig、MaixCam；不为翻译文档名而修改源码目录。
+- 新增文档时更新[中文资料总目录](docs/README.md)及所属模块入口；改名时同步更新链接、图片引用和正文中的路径。
+- 获奖证书放在 `docs/assets/awards/`，首页展示使用相对路径，保持原图内容及长宽比。
 
 ## 提交前检查
 

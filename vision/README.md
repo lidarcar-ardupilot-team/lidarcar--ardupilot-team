@@ -6,9 +6,9 @@
 <summary><strong>快速导航</strong></summary>
 
 - [程序入口](src/main.py)：相机读取、AprilTag 识别、坐标换算、串口收发与舵机状态机。
-- [板载视觉—飞控协议](docs/maixcam-flight-controller-protocol.md)：两种帧、字节顺序、坐标和控制权。
-- [跨模块边界](../docs/team-collaboration.md#interface-record)：将视觉结果提供给其他模块前必须补齐的字段。
-- [空地 AS32 目标帧](../docs/competition/communication-contract.md)：这是对外无线应用层帧，和本目录的板载串口帧不同。
+- [板载视觉—飞控协议](docs/MaixCam与飞控串口协议.md)：两种帧、字节顺序、坐标和控制权。
+- [跨模块边界](../docs/团队分工与接口约定.md#interface-record)：将视觉结果提供给其他模块前必须补齐的字段。
+- [空地 AS32 目标帧](../docs/competition/空地联调通信约定.md)：这是对外无线应用层帧，和本目录的板载串口帧不同。
 
 </details>
 
@@ -18,10 +18,10 @@
 | --- | --- | --- | --- | --- |
 | MaixCam Pro 程序 | [`src/main.py`](src/main.py) | `stage-record` | 使用 `maix` 的相机、显示、UART、PWM 接口；包含识别、过滤、串口和舵机状态机。 | 当前固件/运行时可启动，镜头/设备与源码配置一致。 |
 | 目标识别 | `find_apriltags()` | `stage-record` | 代码实际调用 AprilTag API，并将 Tag ID `2/0/1` 映射为 A/B/C 对应码。 | 三张赛题实物在当前光照、距离和运动状态下的识别率。 |
-| 视觉—飞控串口 | [协议页](docs/maixcam-flight-controller-protocol.md) | `stage-record` | 飞控下发目标类别，视觉回传带符号的 X/Y 厘米偏差。 | 当前 TX/RX 接线、波特率、双方版本和失效行为已联调。 |
+| 视觉—飞控串口 | [协议页](docs/MaixCam与飞控串口协议.md) | `stage-record` | 飞控下发目标类别，视觉回传带符号的 X/Y 厘米偏差。 | 当前 TX/RX 接线、波特率、双方版本和失效行为已联调。 |
 | 舵机投递 | `src/main.py` | `stage-record` | 以非阻塞 `OPENING → HOLDING → CLOSING` 状态机驱动 PWM。 | 安全零位、行程、机械干涉和实际投放成功。 |
 
-源文件 SHA-256：`A8CECE0B53ADB006BE7373B9A26C7DCF883752FA8E8A7760664C6E5B42B965A3`（导入前的 `D:\Vs Code\MSPM0\lidarMSP\提交\main.py`）。状态定义见 [项目资料与验证状态](../docs/evidence-and-status.md)。
+源文件 SHA-256：`A8CECE0B53ADB006BE7373B9A26C7DCF883752FA8E8A7760664C6E5B42B965A3`（导入前的 `D:\Vs Code\MSPM0\lidarMSP\提交\main.py`）。状态定义见 [项目资料与验证状态](../docs/项目资料与验证状态.md)。
 
 ## 程序的实际工作链
 
@@ -54,5 +54,5 @@ STM32F407 飞控
 ## 维护规则
 
 1. 不提交模型权重、运行日志、原始大视频或设备私有配置；将其放入团队确认的存储位置，并在证据页登记哈希和链接。
-2. 不把板载串口帧误写为 [AS32 空地 9 字节帧](../docs/competition/communication-contract.md)。前者服务飞控与相机，后者服务无人机、小车和参赛电脑。
+2. 不把板载串口帧误写为 [AS32 空地 9 字节帧](../docs/competition/空地联调通信约定.md)。前者服务飞控与相机，后者服务无人机、小车和参赛电脑。
 3. 改相机方向、安装高度、坐标轴、Tag 映射、舵机行程或触发条件时，在协议页和同轮测试记录中一起更新；视觉结果不能绕过飞控状态机或小车本地安全判断。

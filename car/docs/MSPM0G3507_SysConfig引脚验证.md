@@ -9,7 +9,7 @@
 1. 新建或打开版本化的 `*.syscfg`，选择与 PCB 丝印一致的 **MSPM0G3507 精确封装**。
 2. 添加 UART0–UART3、I2C、TIMA/TIMG、GPIO、ADC 与 SysTick/LED 所需模块；每个模块填写实际波特率、定时器周期、方向和中断需求。
 3. 在每个模块的 **PinMux** 区选择本项目表中的唯一活动对；不得把同一候选同时分配给 UART、按键、LED、ADC、编码器或超声波。
-4. 以 `mspm0g3507-pin-assignment.md` 的“已知互斥点”为核对清单，特别检查 PB0/PB1、PB4/PB5、PB6/PB7、PB12/PB13、PB15–PB18、PA24–PA31。
+4. 以 `MSPM0G3507引脚分配.md` 的“已知互斥点”为核对清单，特别检查 PB0/PB1、PB4/PB5、PB6/PB7、PB12/PB13、PB15–PB18、PA24–PA31。
 5. 使用 SysConfig 的 Problems/PinMux 摘要，要求 **0 个资源冲突和 0 个未解释警告**；保存 `.syscfg` 与生成的 `ti_msp_dl_config.c/.h`。
 
 ## 有效配置后的实物验证

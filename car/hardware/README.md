@@ -16,7 +16,7 @@
 
 1. 以实物 PCB、线束和量测结果确认连接；任何差异先记录，不凭旧代码猜测。
 2. 在版本化 `*.syscfg` 中选择实际器件与封装，消除 PinMux 资源冲突并保存生成配置。
-3. 对照 [`../docs/mspm0g3507-pin-assignment.md`](../docs/mspm0g3507-pin-assignment.md) 更新当前角色分配；发生冲突时同步修改引脚表、`*.syscfg` 和固件。
+3. 对照 [`../docs/MSPM0G3507引脚分配.md`](../docs/MSPM0G3507引脚分配.md) 更新当前角色分配；发生冲突时同步修改引脚表、`*.syscfg` 和固件。
 4. 对 UART、I2C、编码器、电机、ADC 和超声波分别完成台架记录后，才可标记为 `bench-verified`。
 
 原始 EDA 工程、Gerber、BOM、板号照片和板测记录仍待补充。后续导入时以 `rev-<revision>/` 建目录，同时增加接口表、版本照片、板测记录与变更说明；不要从旧固件反推缺失的硬件事实。

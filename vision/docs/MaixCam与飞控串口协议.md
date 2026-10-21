@@ -16,7 +16,7 @@
 <a id="boundary"></a>
 ## 协议边界
 
-这条链路位于**无人机机载内部**：STM32F407 飞控与 MaixCam Pro 通过 UART 交接目标类别和视觉偏差。它使用 `0xBB` 作为帧头，**不等同于**无人机经 ESP/AS32 发给小车、参赛电脑的 `AA BB target_id qr_id x_hi x_lo y_hi y_lo FF` 9 字节帧。对外帧见 [空地联调通信约定](../../docs/competition/communication-contract.md)。
+这条链路位于**无人机机载内部**：STM32F407 飞控与 MaixCam Pro 通过 UART 交接目标类别和视觉偏差。它使用 `0xBB` 作为帧头，**不等同于**无人机经 ESP/AS32 发给小车、参赛电脑的 `AA BB target_id qr_id x_hi x_lo y_hi y_lo FF` 9 字节帧。对外帧见 [空地联调通信约定](../../docs/competition/空地联调通信约定.md)。
 
 导入代码双方均配置为 `115200`：飞控端 `Drv_BSP.c` 初始化 UART3；视觉端配置 `/dev/ttyS1`。实际端口、引脚、电平与 TX/RX 方向必须以当前机体台架记录为准。
 
