@@ -4,7 +4,7 @@
 
 <details open>
 <summary><strong>快速导航</strong></summary>
-
+  
 - [程序入口](src/main.py)：相机读取、AprilTag 识别、坐标换算、串口收发与舵机状态机。
 - [板载视觉—飞控协议](docs/MaixCam与飞控串口协议.md)：两种帧、字节顺序、坐标和控制权。
 - [跨模块边界](../docs/团队分工与接口约定.md#interface-record)：将视觉结果提供给其他模块前必须补齐的字段。
