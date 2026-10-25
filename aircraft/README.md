@@ -5,7 +5,7 @@
 <details open>
 <summary><strong>快速导航</strong></summary>
 
-- [源码入口](firmware/ano_lx_stm32f407/ProjectSTM32F407/ANO_LX_STM32F407.uvprojx)：Keil 工程文件。
+- [源码入口](firmware/ano_lx_stm32f407/ProjectSTM32F407/ANO_LX_STM32F407.uvprojx)：Keil 工程文件。 
 - [飞控核心代码](firmware/ano_lx_stm32f407/FcSrc/)：任务、控制、协议和 UART 逻辑。
 - [板级与 MCU 驱动](firmware/ano_lx_stm32f407/DriversBsp/) / [STM32F407 驱动](firmware/ano_lx_stm32f407/DriversMcu/STM32F407/)。
 - [阶段开发记录](firmware/ano_lx_stm32f407/该版本已完赛.txt)：随源码带入的原始文字记录，只作阶段回溯。
