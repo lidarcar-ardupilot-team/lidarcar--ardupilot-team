@@ -7,7 +7,7 @@
 
 - [协议边界](#boundary)
 - [飞控到相机：选择目标](#fc-to-camera)
-- [相机到飞控：回传偏差](#camera-to-fc)
+- [相机到飞控：回传偏差](#camera-to-fc) 
 - [坐标与控制权](#coordinates)
 - [源码交叉索引与联调清单](#checklist)
 
